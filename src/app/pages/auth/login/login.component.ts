@@ -41,17 +41,20 @@ export class LoginComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this.afAuth.authState.subscribe(d => console.log(d));
-    this.afAuth.authState.subscribe(this.firebaseAuthChangeListener);
+    this.afAuth.authState.subscribe((response) => {
+      this.firebaseAuthChangeListener(response, this.router)
+    });
   }
 
   logout() {
     this.afAuth.auth.signOut();
   }
 
-private firebaseAuthChangeListener(response) {
+private firebaseAuthChangeListener(response:any, theRouter:Router): void {
     // if needed, do a redirect in here
     if (response) {
       console.log('Logged in :)');
+      this.router.navigate(['/dashboard']);
     } else {
       console.log('Logged out :(');
     }
