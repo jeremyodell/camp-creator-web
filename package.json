@@ -34,6 +34,7 @@
     "core-js": "2.5.3",
     "date-fns": "1.29.0",
     "firebase": "^4.10.0",
+    "firebase-admin": "^5.11.0",
     "firebaseui": "^2.6.3",
     "firebaseui-angular": "^2.6.1",
     "hammerjs": "2.0.8",
