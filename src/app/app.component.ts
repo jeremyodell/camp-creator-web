@@ -5,7 +5,7 @@ import { Settings } from './app.settings.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   public settings: Settings;
@@ -13,5 +13,5 @@ export class AppComponent implements OnInit {
     this.settings = this.appSettings.settings;
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 }

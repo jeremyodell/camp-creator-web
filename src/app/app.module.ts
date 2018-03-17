@@ -11,7 +11,7 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
-  suppressScrollX: true
+  suppressScrollX: true,
 };
 import { CalendarModule } from 'angular-calendar';
 import { SharedModule } from './shared/shared.module';
@@ -37,7 +37,6 @@ import { MessagesComponent } from './theme/components/messages/messages.componen
 import { UserMenuComponent } from './theme/components/user-menu/user-menu.component';
 import { AuthModule } from './pages/auth/auth.module';
 
-
 @NgModule({
   imports: [
     AuthModule,
@@ -46,7 +45,7 @@ import { AuthModule } from './pages/auth/auth.module';
     FormsModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDe_oVpi9eRSN99G4o6TwVjJbFBNr58NxE'
+      apiKey: 'AIzaSyDe_oVpi9eRSN99G4o6TwVjJbFBNr58NxE',
     }),
     PerfectScrollbarModule,
     CalendarModule.forRoot(),
@@ -69,13 +68,16 @@ import { AuthModule } from './pages/auth/auth.module';
     FullScreenComponent,
     ApplicationsComponent,
     MessagesComponent,
-    UserMenuComponent
+    UserMenuComponent,
   ],
   providers: [
     AppSettings,
-    { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG },
-    { provide: OverlayContainer, useClass: CustomOverlayContainer }
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    },
+    { provide: OverlayContainer, useClass: CustomOverlayContainer },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
