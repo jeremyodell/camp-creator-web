@@ -1,0 +1,7 @@
+<div fxLayoutWrap fxLayout="row">
+    <div fxFlex="100" class="flex-p"> 
+        <agm-map [latitude]="lat" [longitude]="lon"  [zoom]="zoom" [mapTypeControl]="true" >
+            <agm-marker *ngFor="let camp of campsites$ | async" [latitude]="camp.lat" [longitude]="camp.lon" [markerDraggable]="false" ></agm-marker>
+        </agm-map>
+    </div>
+</div>
