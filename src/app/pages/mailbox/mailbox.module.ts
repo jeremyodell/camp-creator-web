@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { RouterModule } from '@angular/router'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar'
 import { QuillModule } from 'ngx-quill'
-import { SharedModule } from '../../shared/shared.module';
-import { PipesModule } from '../../theme/pipes/pipes.module';
-import { MailboxComponent } from './mailbox.component';
+import { SharedModule } from '../../shared/shared.module'
+import { PipesModule } from '../../theme/pipes/pipes.module'
+import { MailboxComponent } from './mailbox.component'
 
 export const routes = [
-  { path: '', component: MailboxComponent, pathMatch: 'full' }
-];
+  { path: '', component: MailboxComponent, pathMatch: 'full' },
+]
 
 @NgModule({
   imports: [
@@ -21,10 +21,8 @@ export const routes = [
     PerfectScrollbarModule,
     QuillModule,
     SharedModule,
-    PipesModule
+    PipesModule,
   ],
-  declarations: [
-    MailboxComponent
-  ]
+  declarations: [MailboxComponent],
 })
-export class MailboxModule { }
+export class MailboxModule {}

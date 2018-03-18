@@ -1,26 +1,26 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { User } from './user.model';
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs'
+import { User } from './user.model'
 
 @Injectable()
 export class UsersService {
-    public url = "api/users";
-    constructor(public http:HttpClient) { }
-    
-    getUsers(): Observable<User[]> {
-        return this.http.get<User[]>(this.url);
-    }
+  public url = 'api/users'
+  constructor(public http: HttpClient) {}
 
-    addUser(user:User){	    
-        return this.http.post(this.url, user);
-    }
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.url)
+  }
 
-    updateUser(user:User){
-        return this.http.put(this.url, user);
-    }
+  addUser(user: User) {
+    return this.http.post(this.url, user)
+  }
 
-    deleteUser(id: number) {
-        return this.http.delete(this.url + "/" + id);
-    } 
-} 
+  updateUser(user: User) {
+    return this.http.put(this.url, user)
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete(this.url + '/' + id)
+  }
+}
