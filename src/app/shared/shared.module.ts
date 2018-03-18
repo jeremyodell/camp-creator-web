@@ -1,38 +1,40 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatAutocompleteModule,
-         MatButtonModule,
-         MatButtonToggleModule,
-         MatCardModule,
-         MatCheckboxModule,
-         MatChipsModule,
-         MatDatepickerModule,
-         MatDialogModule,
-         MatExpansionModule,
-         MatGridListModule,
-         MatIconModule,
-         MatInputModule,
-         MatListModule,
-         MatMenuModule,
-         MatNativeDateModule,
-         MatPaginatorModule,
-         MatProgressBarModule,
-         MatProgressSpinnerModule,
-         MatRadioModule,
-         MatRippleModule,
-         MatSelectModule,
-         MatSidenavModule,
-         MatSliderModule,
-         MatSlideToggleModule,
-         MatSnackBarModule,
-         MatSortModule,
-         MatTableModule,
-         MatTabsModule,
-         MatToolbarModule,
-         MatTooltipModule,
-         MatStepperModule } from '@angular/material';
-import { FirebaseUIModule } from 'firebaseui-angular';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material'
+import { FirebaseUIModule } from 'firebaseui-angular'
 
 @NgModule({
   imports: [
@@ -69,7 +71,7 @@ import { FirebaseUIModule } from 'firebaseui-angular';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
   ],
   exports: [
     FirebaseUIModule,
@@ -104,8 +106,8 @@ import { FirebaseUIModule } from 'firebaseui-angular';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
   ],
-  declarations: []
+  declarations: [],
 })
-export class SharedModule { }
+export class SharedModule {}

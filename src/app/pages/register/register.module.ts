@@ -1,24 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../../shared/shared.module';
-import { RegisterComponent } from './register.component';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { RouterModule } from '@angular/router'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { SharedModule } from '../../shared/shared.module'
+import { RegisterComponent } from './register.component'
 
 export const routes = [
-  { path: '', component: RegisterComponent, pathMatch: 'full' }
-];
+  { path: '', component: RegisterComponent, pathMatch: 'full' },
+]
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
-  declarations: [
-    RegisterComponent
-  ]
+  declarations: [RegisterComponent],
 })
-export class RegisterModule { }
+export class RegisterModule {}
