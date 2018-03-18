@@ -17,6 +17,11 @@ export const routes: Routes = [
         loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule',
         data: { breadcrumb: 'Dashboard' },
       },
+      {
+        path: 'activities',
+        loadChildren: 'app/pages/activities/activities/activities.module#ActivitiesModule',
+        data: { breadcrumb: 'Activities'},
+      },
 
       {
         path: 'users',
