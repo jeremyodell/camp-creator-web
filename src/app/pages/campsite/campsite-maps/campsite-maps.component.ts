@@ -24,31 +24,23 @@ export interface Campsite {
 
 @Component({
   selector: 'campsite-maps',
-  templateUrl: './campsite-maps.component.html'
+  templateUrl: './campsite-maps.component.html',
+  styleUrls: ['./campsite-maps.component.scss'],
 })
-export class CampsiteMapsComponent implements OnInit {
+export class CampsiteMapsComponent {
   //Houston, Texas 
   public lat: number = 29.761993;
   public lon: number = -95.366302;
   public zoom: number = 9;
   public settings: Settings;
-  campsitesObservable: Observable<any[]>;
   campsitesObservableRef: AngularFirestoreCollection<Campsite>;
   campsites$: Observable<Campsite[]>;
 
   constructor(private afs: AngularFirestore, public appSettings:AppSettings) { 
-
    this.campsitesObservableRef = this.afs.collection<Campsite>('campsites');
    this.campsites$ = this.campsitesObservableRef.valueChanges();
-
-    this.settings = this.appSettings.settings; 
+   this.settings = this.appSettings.settings; 
   }
 
-  ngOnInit() {
-    this.campsitesObservable = this.getCampsites('campsites');
-  }
-  
-  getCampsites(listPath): Observable<any[]> {
-    return null;
-  }
+
 }
