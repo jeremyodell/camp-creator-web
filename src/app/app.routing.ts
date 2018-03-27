@@ -22,7 +22,10 @@ export const routes: Routes = [
         loadChildren: 'app/pages/activities/activities/activities.module#ActivitiesModule',
         data: { breadcrumb: 'Activities'},
       },
-
+      { 
+        path: 'campsite', 
+        loadChildren: 'app/pages/campsite/campsite.module#CampsiteModule', 
+        data: { breadcrumb: 'Campsite' } },
       {
         path: 'users',
         loadChildren: 'app/pages/users/users.module#UsersModule',
