@@ -22,6 +22,11 @@ export const routes: Routes = [
         loadChildren: 'app/pages/activities/activities/activities.module#ActivitiesModule',
         data: { breadcrumb: 'Activities'},
       },
+      {
+        path: 'create-camp',
+        loadChildren: 'app/pages/create-camp/create-camp/create-camp.module#CreateCampModule',
+        data: { breadcrumb: 'Create A Camp'},
+      },
 
       {
         path: 'users',
