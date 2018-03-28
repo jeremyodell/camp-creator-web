@@ -29,6 +29,12 @@ export const routes: Routes = [
       },
 
       {
+        path: 'campsite',
+        loadChildren: 'app/pages/campsite/campsite.module#CampsiteModule',
+        data: { breadcrumb: 'Campsite' }
+      },
+
+      {
         path: 'users',
         loadChildren: 'app/pages/users/users.module#UsersModule',
         data: { breadcrumb: 'Users' },

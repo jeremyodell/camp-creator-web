@@ -2,6 +2,9 @@ import { Menu } from './menu.model';
 
 export const verticalMenuItems = [
     new Menu (1, 'Dashboard', '/', null, 'dashboard', null, false, 0),
+    new Menu (110, 'Camp Site Wizard', null, null, 'campsite', null, true, 0), 
+    new Menu (111, 'Campsite Locator', '/campsite/campsitemaps', null, 'location_on', null, false, 110),
+    new Menu (112, 'Campout Builder', '/campsite/campoutbuilder', null, 'location_on', null, false, 110),
     new Menu (2, 'Activities', '/activities', null, 'list', null, false, 0 ),
     new Menu (201, 'Users', '/users', null, 'supervisor_account', null, false, 0),
     new Menu (3, 'UI Features', null, null, 'computer', null, true, 0),

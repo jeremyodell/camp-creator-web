@@ -37,6 +37,12 @@ import { MessagesComponent } from './theme/components/messages/messages.componen
 import { UserMenuComponent } from './theme/components/user-menu/user-menu.component';
 import { AuthModule } from './pages/auth/auth.module';
 
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule }  from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 @NgModule({
   imports: [
     AuthModule,
@@ -47,6 +53,9 @@ import { AuthModule } from './pages/auth/auth.module';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDe_oVpi9eRSN99G4o6TwVjJbFBNr58NxE',
     }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
     PerfectScrollbarModule,
     CalendarModule.forRoot(),
     SharedModule,
