@@ -1,3 +1,9 @@
+import { QuestionControlService } from './questions/question-control.service';
+import { QuestionService } from './questions/question.service';
+import { DynamicFormComponent } from './questions/dynamic-form.component';
+import { DynamicFormQuestionComponent } from './questions/dynamic-form-questions.component';
+import { CampQuestionsComponent } from './questions/camp-questions';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -14,7 +20,10 @@ export const routes = [
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
+
   ],
-  declarations: [CreateCampComponent]
+  providers: [QuestionService, QuestionControlService],
+  declarations: [CreateCampComponent, CampQuestionsComponent, DynamicFormQuestionComponent,
+    DynamicFormComponent]
 })
 export class CreateCampModule { }
