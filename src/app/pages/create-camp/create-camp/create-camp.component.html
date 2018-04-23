@@ -1,53 +1,64 @@
-<button mat-raised-button (click)="isLinear = true" id="toggle-linear">Enable linear mode</button>
 
-<mat-vertical-stepper [linear]="isLinear" #stepper="matVerticalStepper">
+<mat-vertical-stepper [linear]="true" #stepper="matVerticalStepper">
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Where and When Do You Want to Camp?</ng-template>
       <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
-          <mat-form-field>
-            <input matInput placeholder="Name of Camp" formControlName="firstCtrl" required>
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Campground" formControlName="firstCtrl" required>
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput [matDatepicker]="picker1" placeholder="Start Date" required>
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput [matDatepicker]="picker2" placeholder="End Date" required>
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2></mat-datepicker>
-          </mat-form-field>
-        </div>
-        <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
-          <button mat-button matStepperNext>Next</button>
-        </div>
+        <mat-form-field>
+          <input matInput placeholder="Name of Camp" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Campground" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Start Date" required>
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" placeholder="End Date" required>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
 
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>What Do You Want To Do?</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Address" formControlName="secondCtrl" required>
-      </mat-form-field>
+  <mat-step [stepControl]="mealsFormGroup">
+      <form [formGroup]="mealsFormGroup">
+        <ng-template matStepLabel>Choose Pack Meals</ng-template>
+
+        <camp-questions [formGroup]="mealsFormGroup" type='meals'></camp-questions>
+        <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <div>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+        </div>
+      </form>
+    </mat-step>
+  <mat-step [stepControl]="ceremonyFormGroup">
+    <form [formGroup]="ceremonyFormGroup">
+      <ng-template matStepLabel>Choose Ceremonies</ng-template>
+      <camp-questions [formGroup]="ceremonyFormGroup" type='ceremony'></camp-questions>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
+
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="save()">Save</button>
+      </div>
+    </mat-step>
 </mat-vertical-stepper>
 
 

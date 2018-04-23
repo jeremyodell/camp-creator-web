@@ -27,11 +27,6 @@ export const routes: Routes = [
         loadChildren: 'app/pages/create-camp/create-camp/create-camp.module#CreateCampModule',
         data: { breadcrumb: 'Create A Camp'},
       },
-      {
-        path: 'questions',
-        loadChildren: 'app/pages/create-camp/questions/questions.module#QuestionsModule',
-        data: { breadcrumb: 'Questions'},
-      },
 
       {
         path: 'campsite',

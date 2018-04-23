@@ -27,6 +27,7 @@
     "@angular/router": "5.2.2",
     "@swimlane/ngx-charts": "7.0.1",
     "@swimlane/ngx-datatable": "11.1.7",
+    "@types/lodash": "^4.14.107",
     "ajv-keywords": "^3.1.0",
     "angular-calendar": "0.23.3",
     "angular-in-memory-web-api": "0.5.3",
